@@ -1,0 +1,23 @@
+1.bucket name must be in "reportbucket"
+reportbucket-vinoth-123
+
+2.get keys
+
+curl http://169.254.169.254/latest/meta-data/iam/security-credentials/EC2InstanceProfileRole
+
+3.policy 
+
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": [
+                "s3:GetObject",
+                "s3:PutObject"
+            ],
+            "Resource": "arn:aws:s3:::reportbucket-vinoth-124/*"
+        }
+    ]
+}
